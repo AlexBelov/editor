@@ -15,7 +15,7 @@ joint.shapes.erd = {};
 
 joint.shapes.erd.Entity = joint.dia.Element.extend({
 
-    markup: '<g class="rotatable"><g class="scalable"><polygon class="outer"/><polygon class="inner"/></g><text/></g>',
+    markup: '<g class="rotatable model-object"><g class="scalable"><polygon class="outer"/><polygon class="inner"/></g><text/></g>',
 
     defaults: joint.util.deepSupplement({
 
@@ -23,11 +23,11 @@ joint.shapes.erd.Entity = joint.dia.Element.extend({
         size: { width: 150, height: 60 },
         attrs: {
             '.outer': {
-                fill: '#2ECC71', stroke: '#27AE60', 'stroke-width': 2,
+                fill: '#878787', stroke: '#27AE60', 'stroke-width': 2,
                 points: '100,0 100,60 0,60 0,0'
             },
             '.inner': {
-                fill: '#2ECC71', stroke: '#27AE60', 'stroke-width': 2,
+                fill: '#878787', stroke: '#27AE60', 'stroke-width': 2,
                 points: '95,5 95,55 5,55 5,5',
                 display: 'none'
             },
