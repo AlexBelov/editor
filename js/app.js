@@ -1,10 +1,12 @@
 $(function () {
+    var paper_element =  $('#paper');
+    paper_element.css('height', $( window ).height());
     var graph = new joint.dia.Graph;
 
     var paper = new joint.dia.Paper({
-        el: $('#myholder'),
-        width: 800,
-        height: 600,
+        el: paper_element,
+        width: ($('.panel-body.base').width() - 5),
+        height: $( window ).height(),
         model: graph,
         gridSize: 1
     });
@@ -24,4 +26,10 @@ $(function () {
     });
 
     graph.addCells([rect, rect2, link]);
+
+    //paper.on('cell:pointerdown',
+    //    function(cellView, evt, x, y) {
+    //        alert('cell view ' + cellView.model.type + ' was clicked');
+    //    }
+    //);
 });
