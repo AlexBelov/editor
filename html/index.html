@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Editor</title>
+    <link rel="stylesheet" href="../css/style.css"/>
     <link rel="stylesheet" href="../css/joint.css"/>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
   </head>
 
-  <body style="padding-top: 50px;">
+  <body>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -33,9 +34,22 @@
     </nav>
 
     <div class="container">
-
-      <div id='myholder'></div>
-
+      <div class="editor row">
+        <div class="col-md-9">
+          <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+          </ol>
+          <div id='myholder'></div>
+        </div>
+        <div class="col-md-3">
+          <a href="#" id="menu-add-level" class="btn btn-default">Добавить Уровень</a>
+          <a href="#" id="menu-add-temp" class="btn btn-default">Добавить Темп</a>
+          <a href="#" id="menu-add-variable" class="btn btn-default">Добавить Временную переменную</a>
+          <a href="#" id="menu-add-object" class="btn btn-default">Добавить Объект</a>
+        </div>
+      </div>
     </div>
 
     <script src="../js/jquery-2.1.3.min.js"></script>

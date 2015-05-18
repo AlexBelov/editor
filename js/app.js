@@ -3,7 +3,7 @@ $(function () {
 
     var paper = new joint.dia.Paper({
         el: $('#myholder'),
-        width: 1280,
+        width: 800,
         height: 600,
         model: graph,
         gridSize: 1
