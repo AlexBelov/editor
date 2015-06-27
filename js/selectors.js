@@ -12,6 +12,9 @@ $(document).on('dblclick', '.model-object', function(){
   saveCurrentGraph()
   $('#paper').attr('name', name)
   graph.clear()
+  if(DB[name]) {
+    loadGraph(name)
+  }
 });
 
 $(document).on('click', '.object', function(){
