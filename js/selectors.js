@@ -66,6 +66,10 @@ $("#menu-clear-db").click(function(){
   clearDB()
 })
 
+$(document).on('dblclick', '.model-upper', function(){
+  $(".breadcrumb a").slice(-2, -1).trigger('click');
+})
+
 $(document).on('click', '.breadcrumb a', function(){
   var dbid = $(this).attr('href').substring(1)
   saveCurrentGraph()

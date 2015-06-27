@@ -79,6 +79,7 @@ joint.shapes.erd.Var = joint.shapes.basic.Circle.extend({
 });
 
 joint.shapes.erd.Upper = joint.shapes.basic.Circle.extend({
+   markup: '<g class="rotatable model-upper"><g class="scalable"><circle/></g><text/></g>',
    defaults: joint.util.deepSupplement({
        type: 'erd.Upper',
        size: { width: 80, height: 80 },
