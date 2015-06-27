@@ -68,7 +68,8 @@ paper_element.attr('name', 'Root');
 // HELPERS
 // ============================================================
 var erd = joint.shapes.erd;
-sampleGraph();
+var html = joint.shapes.html;
+//sampleGraph();
 saveCurrentGraph();
 
 var menuElement = function (elm, x, y, label) {
@@ -94,10 +95,10 @@ var menu = new joint.dia.Paper({
     interactive: false
 });
 
-//var el1 = new joint.shapes.html.Rectangle({position: {x: 55, y: 100}, size: {width: 170, height: 100}});
-menuElement(erd.Entity, 55, 50, "Employee");
-menuElement(erd.Rate, 55, 200, "Rate");
-menuElement(erd.Rate, 55, 200, "Rate");
+var rectangle = new joint.shapes.html.Rectangle({position: {x: 35, y: 30}, size: {width: 100, height: 100}});
+var round = new joint.shapes.html.Round({position: {x: 35, y: 140}, size: {width: 100, height: 100}});
+
+graph_menu.addCells([rectangle, round]);
 
 menu.on('cell:pointerdown',
     function (cellView, evt, x, y) {
