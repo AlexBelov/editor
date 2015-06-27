@@ -1,15 +1,15 @@
 var DB = {}
 
 var saveCurrentGraph = function() {
-  name = $('#paper').attr('name')
-  json = JSON.stringify(graph)
+  name = $('#paper').attr('name');
+  json = JSON.stringify(graph);
   DB[name] = JSON.parse(json)
-}
+};
 
 var loadGraph = function(name) {
-  graph.clear()
+  graph.clear();
   graph.fromJSON(DB[name])
-}
+};
 
 function download(filename, text) {
   var pom = document.createElement('a');
@@ -25,19 +25,19 @@ function download(filename, text) {
 }
 
 var getDB = function(filename) {
-  json = JSON.stringify(DB)
+  json = JSON.stringify(DB);
   download(filename, json)
-}
+};
 
 var setDB = function(string_with_json) {
-  DB = JSON.parse(string_with_json)
+  DB = JSON.parse(string_with_json);
   loadGraph("Root")
-}
+};
 
 var clearDB = function() {
-  graph.clear()
+  graph.clear();
   DB = {}
-}
+};
 
 // ===========================================================
 
@@ -52,10 +52,10 @@ var paper = new joint.dia.Paper({
   //embeddingMode: true
 });
 
-$('#paper').attr('name', 'Root')
+$('#paper').attr('name', 'Root');
 
 var erd = joint.shapes.erd;
 
-sampleGraph()
+sampleGraph();
 
-saveCurrentGraph()
+saveCurrentGraph();
