@@ -87,6 +87,10 @@
   font-size: 10px;
 }
 
+#menu button.delete {
+  display: none !important;
+}
+
 
 
 
