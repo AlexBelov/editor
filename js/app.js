@@ -129,6 +129,18 @@
     saveCurrentGraph();
 // ============================================================
 
+
+// ============================================================
+// HELPERS
+// ============================================================
+var element = function(elm, x, y, label) {
+    var cell = new elm({ position: { x: x, y: y }, attrs: { text: { text: label }}});
+    graph.addCell(cell);
+    return cell;
+};
+// ============================================================
+
+
 // ============================================================
 // MENU
 // ============================================================
@@ -144,7 +156,7 @@
         interactive: false
     });
 
-    var el1 = new joint.shapes.html.Rectangle({position: {x: 70, y: 100}, size: {width: 170, height: 100}});
+    var el1 = new joint.shapes.html.Rectangle({position: {x: 55, y: 100}, size: {width: 170, height: 100}});
 
     graph_menu.addCells([el1]);
 
