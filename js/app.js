@@ -51,7 +51,7 @@ var graph = new joint.dia.Graph;
 var paper = new joint.dia.Paper({
   el: $('#paper'),
   width: 800,
-  height: 700,
+  height: 800,
   gridSize: 1,
   model: graph,
 });
@@ -104,7 +104,7 @@ var menuInfluence = function(elm1, elm2) {
 
 //var el1 = new joint.shapes.html.Rectangle({position: {x: 55, y: 100}, size: {width: 170, height: 100}});
 menuElement(erd.Level, 45, 10, "Уровень");
-menuElement(erd.Entity, 45, 90, "Объект");
+menuElement(erd.Object, 45, 90, "Объект");
 menuElement(erd.Rate, 45, 200, "Темп");
 menuElement(erd.Var, 80, 250, "Переменная");
 var link1 = new erd.Dependence({

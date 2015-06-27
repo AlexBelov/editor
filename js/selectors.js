@@ -1,3 +1,9 @@
+var element = function(elm, x, y, label) {
+  var cell = new elm({ position: { x: x, y: y }, attrs: { text: { text: label }}});
+  graph.addCell(cell);
+  return cell;
+};
+
 $(document).on('dblclick', '.model-object', function(){
   var list = $(".breadcrumb")[0];
   var name = $(this).text();
@@ -16,9 +22,12 @@ $(document).on('dblclick', '.model-object', function(){
   if(DB[dbid]) {
     loadGraph(dbid)
   }
+  else {
+    element(erd.Upper, 350, 30, "Upper level");
+  }
 });
 
-$(document).on('click', '.object', function(){
+$(document).on('click', '.editor-element', function(){
   var name = $(this).text();
   var objectId = $(this).attr('id');
   var properties_div = $(".properties")

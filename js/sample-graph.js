@@ -5,7 +5,7 @@ var sampleGraph = function(){
     return cell;
   };
 
-  var employee = element(erd.Entity, 100, 200, "Employee");
+  var employee = element(erd.Object, 100, 200, "Employee");
   var salesman = element(erd.Level, 100, 400, "Salesman");
   var isa = element(erd.Rate, 125, 300, "Rate");
   var skills = element(erd.Var, 150, 90, "skills");

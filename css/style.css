@@ -1,3 +1,7 @@
+body {
+  padding-top: 20px;
+}
+
 .btn {
     margin: 10px;
 }
@@ -98,7 +102,6 @@
 }
 
 .properties {
-  margin-left: 10px;
   margin-top: 10px;
 }
 

@@ -15,7 +15,7 @@ joint.shapes.erd = {};
 
 joint.shapes.erd.Rate = joint.dia.Element.extend({
 
-  markup: '<g class="object rotatable"><g class="scalable"><polygon/></g><text/></g>',
+  markup: '<g class="editor-element rotatable model-rate"><g class="scalable"><polygon/></g><text/></g>',
 
   defaults: joint.util.deepSupplement({
 
@@ -39,7 +39,7 @@ joint.shapes.erd.Rate = joint.dia.Element.extend({
 
 joint.shapes.erd.Level = joint.dia.Element.extend({
 
-    markup: '<g class="rotatable object"><g class="scalable"><polygon class="outer"/><polygon class="inner"/></g><text/></g>',
+    markup: '<g class="rotatable editor-element model-level"><g class="scalable"><polygon class="outer"/><polygon class="inner"/></g><text/></g>',
 
     defaults: joint.util.deepSupplement({
 
@@ -67,6 +67,7 @@ joint.shapes.erd.Level = joint.dia.Element.extend({
 });
 
 joint.shapes.erd.Var = joint.shapes.basic.Circle.extend({
+   markup: '<g class="rotatable editor-element model-var"><g class="scalable"><circle/></g><text/></g>',
    defaults: joint.util.deepSupplement({
        type: 'erd.Var',
        size: { width: 80, height: 80 },
@@ -77,13 +78,24 @@ joint.shapes.erd.Var = joint.shapes.basic.Circle.extend({
    }, joint.shapes.basic.Circle.prototype.defaults)
 });
 
-joint.shapes.erd.Entity = joint.dia.Element.extend({
+joint.shapes.erd.Upper = joint.shapes.basic.Circle.extend({
+   defaults: joint.util.deepSupplement({
+       type: 'erd.Upper',
+       size: { width: 80, height: 80 },
+       attrs: {
+         circle: { fill: '#9E2121', stroke: '#9E2121', r: 30, transform: 'translate(30, 30)', 'stroke-width': 2},
+         text: { 'font-weight': '800', 'font-size': 12 }
+       }
+   }, joint.shapes.basic.Circle.prototype.defaults)
+});
 
-    markup: '<g class="rotatable object model-object"><g class="scalable"><polygon class="outer"/><polygon class="inner"/></g><text/></g>',
+joint.shapes.erd.Object = joint.dia.Element.extend({
+
+    markup: '<g class="rotatable editor-element model-object"><g class="scalable"><polygon class="outer"/><polygon class="inner"/></g><text/></g>',
 
     defaults: joint.util.deepSupplement({
 
-        type: 'erd.Entity',
+        type: 'erd.Object',
         size: { width: 150, height: 60 },
         attrs: {
             '.outer': {
@@ -96,7 +108,7 @@ joint.shapes.erd.Entity = joint.dia.Element.extend({
                 display: 'none'
             },
             text: {
-                text: 'Entity',
+                text: 'Object',
                 'font-family': 'Arial', 'font-size': 14,
                 ref: '.outer', 'ref-x': .5, 'ref-y': .5,
                 'x-alignment': 'middle', 'y-alignment': 'middle'
