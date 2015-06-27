@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Editor</title>
-    <link rel="stylesheet" href="../css/style.css"/>
-    <link rel="stylesheet" href="../css/joint.css"/>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/joint.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
 </nav>
 
 <div class="container">
-    <div class="editor row">
+    <div class="row">
         <div class="col-md-9">
             <ol class="breadcrumb">
                 <li><a href="#">Root</a></li>
@@ -48,6 +48,11 @@
         </div>
         <div class="col-md-3">
             <div class="panel panel-default">
+                <div class="panel-body menu">
+                    <div id='menu'></div>
+                </div>
+            </div>
+            <div class="panel panel-default">
                 <div class="panel-body">
                     <a href="#" id="menu-clear-db" class="btn btn-default">Очистить</a>
                     <a href="#" id="menu-save-db" class="btn btn-default">Сохранить</a>
@@ -55,11 +60,6 @@
                         <label for="files">Загрузка из файла </label>
                         <input id="files" type="file"/>
                     </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-body menu">
-                    <div id='menu'></div>
                 </div>
             </div>
         </div>
