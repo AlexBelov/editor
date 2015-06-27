@@ -105,7 +105,7 @@ $(function () {
             //
             //l.set('target', { x: 200, y: 300 })
 
-            graph.addCells([new_object, l]);
+            graph.addCells([new_object]);
         }
     );
     // ============================================================
