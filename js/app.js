@@ -3,7 +3,7 @@
 // ============================================================
 var DB = {};
 
-var saveCurrentGraph = function () {
+var saveCurrentGraph = function (name) {
     name = $('#paper').attr('name');
     json = JSON.stringify(graph);
     DB[name] = JSON.parse(json)
@@ -46,21 +46,17 @@ var clearDB = function () {
 // ============================================================
 // BASE PAPER
 // ============================================================
-var paper_element = $('#paper');
-
-paper_element.css('height', $(window).height());
-
 var graph = new joint.dia.Graph;
 
 var paper = new joint.dia.Paper({
-    el: paper_element,
-    width: ($('.panel-body.base').width() - 5),
-    height: $(window).height(),
-    model: graph,
-    gridSize: 1
+  el: $('#paper'),
+  width: 800,
+  height: 700,
+  gridSize: 1,
+  model: graph,
 });
 
-paper_element.attr('name', 'Root');
+$('#paper').attr('name', 'Root');
 // ============================================================
 
 
@@ -68,7 +64,7 @@ paper_element.attr('name', 'Root');
 // HELPERS
 // ============================================================
 var erd = joint.shapes.erd;
-sampleGraph();
+// sampleGraph();
 saveCurrentGraph();
 
 var menuElement = function (elm, x, y, label) {
@@ -88,22 +84,44 @@ var graph_menu = new joint.dia.Graph;
 var menu = new joint.dia.Paper({
     el: menu_element,
     width: ($('.panel-body.menu').width() - 5),
-    height: $(window).height(),
+    height: 400,
     model: graph_menu,
     gridSize: 1,
     interactive: false
 });
 
+var menuDependence = function(elm1, elm2) {
+  var myLink = new erd.Dependence({ source: { id: elm1.id }, target: { id: elm2.id }});
+  graph_menu.addCell(myLink);
+  return myLink;
+}
+
+var menuInfluence = function(elm1, elm2) {
+  var myLink = new erd.Influence({ source: { id: elm1.id }, target: { id: elm2.id }});
+  graph_menu.addCell(myLink);
+  return myLink;
+}
+
 //var el1 = new joint.shapes.html.Rectangle({position: {x: 55, y: 100}, size: {width: 170, height: 100}});
-menuElement(erd.Entity, 55, 50, "Employee");
-menuElement(erd.Rate, 55, 200, "Rate");
-menuElement(erd.Rate, 55, 200, "Rate");
+menuElement(erd.Level, 45, 10, "Уровень");
+menuElement(erd.Entity, 45, 90, "Объект");
+menuElement(erd.Rate, 45, 200, "Темп");
+menuElement(erd.Var, 80, 250, "Переменная");
+var link1 = new erd.Dependence({
+  source: { x: 40, y: 360 },
+  target: { x: 200, y: 360 },
+});
+
+var link2 = new erd.Influence({
+  source: { x: 40, y: 390 },
+  target: { x: 200, y: 390 },
+});
+
+graph_menu.addCell([link1, link2]);
 
 menu.on('cell:pointerdown',
     function (cellView, evt, x, y) {
         var new_object = cellView.model.clone();
-        new_object.translate(400);
-
         graph.addCells([new_object]);
     }
 );

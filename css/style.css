@@ -108,4 +108,10 @@
 
 .property-button {
   margin-left: 0;
+  margin-right: 5px
+}
+
+.property-button-delete {
+  margin-left: 0;
+  margin-right: 5px
 }
