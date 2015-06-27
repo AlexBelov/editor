@@ -15,7 +15,7 @@ joint.shapes.erd = {};
 
 joint.shapes.erd.Entity = joint.dia.Element.extend({
 
-    markup: '<g class="rotatable model-object"><g class="scalable"><polygon class="outer"/><polygon class="inner"/></g><text/></g>',
+    markup: '<g class="rotatable object model-object"><g class="scalable"><polygon class="outer"/><polygon class="inner"/></g><text/></g>',
 
     defaults: joint.util.deepSupplement({
 
@@ -58,7 +58,7 @@ joint.shapes.erd.WeakEntity = joint.shapes.erd.Entity.extend({
 
 joint.shapes.erd.Relationship = joint.dia.Element.extend({
 
-    markup: '<g class="rotatable"><g class="scalable"><polygon class="outer"/><polygon class="inner"/></g><text/></g>',
+    markup: '<g class="object rotatable"><g class="scalable"><polygon class="outer"/><polygon class="inner"/></g><text/></g>',
 
     defaults: joint.util.deepSupplement({
 
@@ -101,7 +101,7 @@ joint.shapes.erd.IdentifyingRelationship = joint.shapes.erd.Relationship.extend(
 
 joint.shapes.erd.Attribute = joint.dia.Element.extend({
 
-    markup: '<g class="rotatable"><g class="scalable"><ellipse class="outer"/><ellipse class="inner"/></g><text/></g>',
+    markup: '<g class="object rotatable"><g class="scalable"><ellipse class="outer"/><ellipse class="inner"/></g><text/></g>',
 
     defaults: joint.util.deepSupplement({
 
@@ -185,7 +185,7 @@ joint.shapes.erd.Normal = joint.shapes.erd.Attribute.extend({
 
 joint.shapes.erd.ISA = joint.dia.Element.extend({
 
-    markup: '<g class="rotatable"><g class="scalable"><polygon/></g><text/></g>',
+    markup: '<g class="object rotatable"><g class="scalable"><polygon/></g><text/></g>',
 
     defaults: joint.util.deepSupplement({
 
@@ -209,7 +209,7 @@ joint.shapes.erd.ISA = joint.dia.Element.extend({
 
 joint.shapes.erd.Rate = joint.dia.Element.extend({
 
-  markup: '<g class="rotatable"><g class="scalable"><polygon/></g><text/></g>',
+  markup: '<g class="object rotatable"><g class="scalable"><polygon/></g><text/></g>',
 
   defaults: joint.util.deepSupplement({
 

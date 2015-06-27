@@ -96,3 +96,16 @@
 #menu button.delete {
     display: none !important;
 }
+
+.properties {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.property-label {
+  display: block;
+}
+
+.property-button {
+  margin-left: 0;
+}
