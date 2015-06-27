@@ -97,8 +97,17 @@ $(function () {
         function(cellView, evt, x, y) {
             var new_object = cellView.model.clone();
             new_object.translate(400);
-            graph.addCells([new_object]);
+
+            //var l = new joint.dia.Link({
+            //    source: { id: new_object.id },
+            //    attrs: { '.connection': { 'stroke-width': 5, stroke: '#34495E' } }
+            //});
+            //
+            //l.set('target', { x: 200, y: 300 })
+
+            graph.addCells([new_object, l]);
         }
     );
     // ============================================================
+
 });
