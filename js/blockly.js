@@ -4,7 +4,7 @@ $('#blocklyBase').addClass('not-visible');
 
 var jointjsElement;
 
-$(document).on('click', '#paper .model-blockly', function(){
+$(document).on('dblclick', '#paper .model-blockly', function(){
   var objectId = $(this).parent().attr('model-id');
   jointjsElement = graph.getCell(objectId);
 
