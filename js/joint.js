@@ -20733,7 +20733,8 @@ joint.dia.Element = joint.dia.Cell.extend({
     defaults: {
         position: { x: 0, y: 0 },
 	size: { width: 1, height: 1 },
-        angle: 0
+        angle: 0,
+		blockly_xml: '<xml xmlns="http://www.w3.org/1999/xhtml"></xml>'
     },
 
     position: function(x, y, opt) {
