@@ -15,7 +15,7 @@ joint.shapes.erd = {};
 
 joint.shapes.erd.Rate = joint.dia.Element.extend({
 
-  markup: '<g class="editor-element rotatable model-rate"><g class="scalable"><polygon/></g><text/></g>',
+  markup: '<g class="editor-element rotatable model-rate model-blockly"><g class="scalable"><polygon/></g><text/></g>',
 
   defaults: joint.util.deepSupplement({
 
@@ -67,7 +67,7 @@ joint.shapes.erd.Level = joint.dia.Element.extend({
 });
 
 joint.shapes.erd.Var = joint.shapes.basic.Circle.extend({
-   markup: '<g class="rotatable editor-element model-var"><g class="scalable"><circle/></g><text/></g>',
+   markup: '<g class="rotatable editor-element model-var model-blockly"><g class="scalable"><circle/></g><text/></g>',
    defaults: joint.util.deepSupplement({
        type: 'erd.Var',
        size: { width: 80, height: 80 },

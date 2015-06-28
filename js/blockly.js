@@ -4,19 +4,18 @@ $('#blocklyBase').addClass('not-visible');
 
 var jointjsElement;
 
-paper.on('cell:pointerdown',
-    function (cellView, evt, x, y) {
-        $('.container').addClass('hidden');
-        $('#blocklyBase').removeClass('not-visible');
+$(document).on('click', '#paper .model-blockly', function(){
+  var objectId = $(this).parent().attr('model-id');
+  jointjsElement = graph.getCell(objectId);
 
-        jointjsElement = cellView.model;
+  $('.container').addClass('hidden');
+  $('#blocklyBase').removeClass('not-visible');
 
-        Blockly.mainWorkspace.clear();
+  Blockly.mainWorkspace.clear();
 
-        var xml = Blockly.Xml.textToDom(jointjsElement.attributes.blockly_xml);
-        Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xml);
-    }
-);
+  var xml = Blockly.Xml.textToDom(jointjsElement.attributes.blockly_xml);
+  Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xml);
+})
 
 $('#blocklySave').click(function () {
         var xml = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
