@@ -78,16 +78,33 @@ joint.shapes.erd.Var = joint.shapes.basic.Circle.extend({
    }, joint.shapes.basic.Circle.prototype.defaults)
 });
 
-joint.shapes.erd.Upper = joint.shapes.basic.Circle.extend({
-   markup: '<g class="rotatable model-upper"><g class="scalable"><circle/></g><text/></g>',
-   defaults: joint.util.deepSupplement({
-       type: 'erd.Upper',
-       size: { width: 80, height: 80 },
-       attrs: {
-         circle: { fill: '#9E2121', stroke: '#9E2121', r: 30, transform: 'translate(30, 30)', 'stroke-width': 2},
-         text: { 'font-weight': '800', 'font-size': 12 }
-       }
-   }, joint.shapes.basic.Circle.prototype.defaults)
+joint.shapes.erd.Upper = joint.dia.Element.extend({
+
+    markup: '<g class="rotatable model-upper"><g class="scalable"><polygon class="outer"/><polygon class="inner"/></g><text/></g>',
+
+    defaults: joint.util.deepSupplement({
+
+        type: 'erd.Upper',
+        size: { width: 150, height: 60 },
+        attrs: {
+            '.outer': {
+                fill: '#9E2121', stroke: '#000000', 'stroke-width': 2,
+                points: '100,0 100,60 0,60 0,0'
+            },
+            '.inner': {
+                fill: '#9E2121', stroke: '#000000', 'stroke-width': 2,
+                points: '95,5 95,55 5,55 5,5',
+                display: 'none'
+            },
+            text: {
+                text: 'Верхний уровень',
+                'font-family': 'Arial', 'font-size': 14,
+                ref: '.outer', 'ref-x': .5, 'ref-y': .5,
+                'x-alignment': 'middle', 'y-alignment': 'middle'
+            }
+        }
+
+    }, joint.dia.Element.prototype.defaults)
 });
 
 joint.shapes.erd.Object = joint.dia.Element.extend({

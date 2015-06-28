@@ -23,7 +23,7 @@ $(document).on('dblclick', '#paper .model-object', function(){
     loadGraph(dbid)
   }
   else {
-    element(erd.Upper, 350, 30, "Upper level");
+    element(erd.Upper, 350, 30);
   }
 });
 
