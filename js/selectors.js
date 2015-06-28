@@ -4,7 +4,7 @@ var element = function(elm, x, y, label) {
   return cell;
 };
 
-$(document).on('dblclick', '.model-object', function(){
+$(document).on('dblclick', '#paper .model-object', function(){
   var list = $(".breadcrumb")[0];
   var name = $(this).text();
   var dbid = $(this).parent().attr('model-id');
@@ -27,7 +27,7 @@ $(document).on('dblclick', '.model-object', function(){
   }
 });
 
-$(document).on('click', '.editor-element', function(){
+$(document).on('click', '#paper .editor-element', function(){
   var name = $(this).text();
   var objectId = $(this).attr('id');
   var properties_div = $(".properties")
