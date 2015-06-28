@@ -13,7 +13,6 @@ paper.on('cell:pointerdown',
 
         Blockly.mainWorkspace.clear();
 
-        debugger;
         var xml = Blockly.Xml.textToDom(jointjsElement.attributes.blockly_xml);
         Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xml);
     }

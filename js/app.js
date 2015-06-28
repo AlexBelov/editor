@@ -28,6 +28,7 @@ function download(filename, text) {
 }
 
 var getDB = function (filename) {
+    saveCurrentGraph()
     json = JSON.stringify(DB);
     download(filename, json)
 };
