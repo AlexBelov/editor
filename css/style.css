@@ -118,3 +118,23 @@ body {
   margin-left: 0;
   margin-right: 5px
 }
+
+/*blockly*/
+#blocklyBase {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#blocklyDiv {
+    margin: 0 auto;
+    height: 480px;
+    width: 800px;
+}
+
+.not-visible {
+    visibility: hidden;
+}
+
+.blocklyBtn {
+
+}
